@@ -9,6 +9,7 @@ import (
 	"crypto/tls"
 	"net/http"
 
+	"cloud.google.com/go/auth"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/internal"
@@ -344,9 +345,20 @@ func WithCredentials(creds *google.Credentials) ClientOption {
 	return (*withCreds)(creds)
 }
 
+// WithAuthCredentials returns a ClientOption that specifies an
+// [cloud.google.com/go/auth.Credentials] to be used as the basis for
+// authentication.
+func WithAuthCredentials(creds *auth.Credentials) ClientOption {
+	return withAuthCredentials{creds}
+}
+
+type withAuthCredentials struct{ creds *auth.Credentials }
+
+func (w withAuthCredentials) Apply(o *internal.DialSettings) {
+	o.AuthCredentials = w.creds
+}
+
 // WithUniverseDomain returns a ClientOption that sets the universe domain.
-//
-// This is an EXPERIMENTAL API and may be changed or removed in the future.
 func WithUniverseDomain(ud string) ClientOption {
 	return withUniverseDomain(ud)
 }
