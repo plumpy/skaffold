@@ -1,4 +1,4 @@
-<!-- github does not support `width` with markdown images-->
+<!-- github does not support `width` with markdown images--->
 <img src="logo/skaffold.png" width="220">
 
 ---------------------
