@@ -662,7 +662,8 @@ type CSIVolumeSource struct {
 	// VolumeAttributes: stores driver specific attributes. For Google Cloud
 	// Storage volumes, the following attributes are supported: * bucketName: the
 	// name of the Cloud Storage bucket to mount. The Cloud Run Service identity
-	// must have access to this bucket.
+	// must have access to this bucket. * mountOptions: comma-separated list of
+	// mount options to pass to the gcsfuse.
 	VolumeAttributes map[string]string `json:"volumeAttributes,omitempty"`
 	// ForceSendFields is a list of field names (e.g. "Driver") to unconditionally
 	// include in API requests. By default, fields with empty or default values are
@@ -2705,7 +2706,9 @@ func (s GoogleDevtoolsCloudbuildV1MavenArtifact) MarshalJSON() ([]byte, error) {
 // GoogleDevtoolsCloudbuildV1NpmPackage: Npm package to upload to Artifact
 // Registry upon successful completion of all build steps.
 type GoogleDevtoolsCloudbuildV1NpmPackage struct {
-	// PackagePath: Path to the package.json. e.g. workspace/path/to/package
+	// PackagePath: Optional. Path to the package.json. e.g.
+	// workspace/path/to/package Only one of `archive` or `package_path` can be
+	// specified.
 	PackagePath string `json:"packagePath,omitempty"`
 	// Repository: Artifact Registry repository, in the form
 	// "https://$REGION-npm.pkg.dev/$PROJECT/$REPOSITORY" Npm package in the
@@ -3336,6 +3339,11 @@ type GoogleLongrunningListOperationsResponse struct {
 	// Operations: A list of operations that matches the specified filter in the
 	// request.
 	Operations []*GoogleLongrunningOperation `json:"operations,omitempty"`
+	// Unreachable: Unordered list. Unreachable resources. Populated when the
+	// request sets `ListOperationsRequest.return_partial_success` and reads across
+	// collections e.g. when attempting to list all resources across all supported
+	// locations.
+	Unreachable []string `json:"unreachable,omitempty"`
 
 	// ServerResponse contains the HTTP response code and headers from the server.
 	googleapi.ServerResponse `json:"-"`
@@ -4608,7 +4616,7 @@ type RevisionSpec struct {
 	// NodeSelector: Optional. The Node Selector configuration. Map of selector key
 	// to a value which matches a node.
 	NodeSelector map[string]string `json:"nodeSelector,omitempty"`
-	// RuntimeClassName: Runtime. Leave unset for default.
+	// RuntimeClassName: Optional. Runtime. Leave unset for default.
 	RuntimeClassName string `json:"runtimeClassName,omitempty"`
 	// ServiceAccountName: Email address of the IAM service account associated with
 	// the revision of the service. The service account represents the identity of
@@ -7459,9 +7467,9 @@ type NamespacesJobsGetCall struct {
 
 // Get: Get information about a job.
 //
-//   - name: The name of the job to retrieve. Replace {namespace} with the
-//     project ID or number. It takes the form namespaces/{namespace}. For
-//     example: namespaces/PROJECT_ID.
+//   - name: The name of the job to retrieve. It takes the form
+//     namespaces/{namespace}/jobs/{job_name} and the `endpoint` must be
+//     regional. Replace {namespace} with the project ID or number.
 func (r *NamespacesJobsService) Get(name string) *NamespacesJobsGetCall {
 	c := &NamespacesJobsGetCall{s: r.s, urlParams_: make(gensupport.URLParams)}
 	c.name = name
@@ -10323,9 +10331,9 @@ func (r *ProjectsLocationsService) List(name string) *ProjectsLocationsListCall 
 	return c
 }
 
-// ExtraLocationTypes sets the optional parameter "extraLocationTypes": A list
-// of extra location types that should be used as conditions for controlling
-// the visibility of the locations.
+// ExtraLocationTypes sets the optional parameter "extraLocationTypes": Unless
+// explicitly documented otherwise, don't use this unsupported field which is
+// primarily intended for internal usage.
 func (c *ProjectsLocationsListCall) ExtraLocationTypes(extraLocationTypes ...string) *ProjectsLocationsListCall {
 	c.urlParams_.SetMulti("extraLocationTypes", append([]string{}, extraLocationTypes...))
 	return c
@@ -12003,6 +12011,19 @@ func (c *ProjectsLocationsOperationsListCall) PageSize(pageSize int64) *Projects
 // result to start with, which is returned by a previous list call.
 func (c *ProjectsLocationsOperationsListCall) PageToken(pageToken string) *ProjectsLocationsOperationsListCall {
 	c.urlParams_.Set("pageToken", pageToken)
+	return c
+}
+
+// ReturnPartialSuccess sets the optional parameter "returnPartialSuccess":
+// When set to `true`, operations that are reachable are returned as normal,
+// and those that are unreachable are returned in the
+// [ListOperationsResponse.unreachable] field. This can only be `true` when
+// reading across collections e.g. when `parent` is set to
+// "projects/example/locations/-". This field is not by default supported and
+// will result in an `UNIMPLEMENTED` error if set unless explicitly documented
+// otherwise in service or product specific documentation.
+func (c *ProjectsLocationsOperationsListCall) ReturnPartialSuccess(returnPartialSuccess bool) *ProjectsLocationsOperationsListCall {
+	c.urlParams_.Set("returnPartialSuccess", fmt.Sprint(returnPartialSuccess))
 	return c
 }
 
