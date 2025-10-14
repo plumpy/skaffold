@@ -26,7 +26,7 @@ replace github.com/buildpacks/lifecycle => github.com/buildpacks/lifecycle v0.20
 require (
 	4d63.com/tz v1.2.0
 	cloud.google.com/go/cloudbuild v1.23.1
-	cloud.google.com/go/monitoring v1.24.2
+	cloud.google.com/go/monitoring v1.24.3
 	cloud.google.com/go/profiler v0.4.2
 	cloud.google.com/go/storage v1.52.0
 	dario.cat/mergo v1.0.1
@@ -335,7 +335,7 @@ require (
 	golang.org/x/net v0.43.0 // indirect
 	golang.org/x/text v0.28.0 // indirect
 	golang.org/x/time v0.12.0 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20250811230008-5f3141c8851a // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20250818200422-3122310a409c // indirect
 	gopkg.in/evanphx/json-patch.v4 v4.12.0 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
