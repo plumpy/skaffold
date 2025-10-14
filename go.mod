@@ -32,7 +32,7 @@ require (
 	dario.cat/mergo v1.0.2
 	github.com/AlecAivazis/survey/v2 v2.3.7
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/metric v0.54.0
-	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/trace v1.27.0
+	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/trace v1.30.0
 	github.com/Masterminds/sprig v2.22.0+incompatible
 	github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d
 	github.com/ahmetb/dlog v0.0.0-20170105205344-4fb5f8204f26
@@ -133,7 +133,7 @@ require (
 	cloud.google.com/go/compute/metadata v0.9.0 // indirect
 	cloud.google.com/go/iam v1.5.3 // indirect
 	cloud.google.com/go/longrunning v0.6.7 // indirect
-	cloud.google.com/go/trace v1.11.6 // indirect
+	cloud.google.com/go/trace v1.11.7 // indirect
 	github.com/Azure/azure-sdk-for-go v68.0.0+incompatible // indirect
 	github.com/Azure/go-ansiterm v0.0.0-20250102033503-faa5f7b0171c // indirect
 	github.com/Azure/go-autorest v14.2.0+incompatible // indirect

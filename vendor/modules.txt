@@ -75,8 +75,8 @@ cloud.google.com/go/storage/experimental
 cloud.google.com/go/storage/internal
 cloud.google.com/go/storage/internal/apiv2
 cloud.google.com/go/storage/internal/apiv2/storagepb
-# cloud.google.com/go/trace v1.11.6
-## explicit; go 1.23.0
+# cloud.google.com/go/trace v1.11.7
+## explicit; go 1.24.0
 cloud.google.com/go/trace/apiv2
 cloud.google.com/go/trace/apiv2/tracepb
 cloud.google.com/go/trace/internal
@@ -131,8 +131,8 @@ github.com/GoogleCloudPlatform/opentelemetry-operations-go/detectors/gcp
 # github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/metric v0.54.0
 ## explicit; go 1.24.0
 github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/metric
-# github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/trace v1.27.0
-## explicit; go 1.22
+# github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/trace v1.30.0
+## explicit; go 1.24.0
 github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/trace
 # github.com/GoogleCloudPlatform/opentelemetry-operations-go/internal/resourcemapping v0.54.0
 ## explicit; go 1.24.0
