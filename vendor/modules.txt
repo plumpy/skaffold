@@ -1,5 +1,5 @@
-# 4d63.com/embedfiles v0.0.0-20190311033909-995e0740726f
-## explicit
+# 4d63.com/embedfiles v1.0.0
+## explicit; go 1.13
 4d63.com/embedfiles
 # 4d63.com/tz v1.2.0
 ## explicit; go 1.13
