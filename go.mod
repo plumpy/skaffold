@@ -29,7 +29,7 @@ require (
 	cloud.google.com/go/monitoring v1.24.3
 	cloud.google.com/go/profiler v0.4.3
 	cloud.google.com/go/storage v1.57.0
-	dario.cat/mergo v1.0.1
+	dario.cat/mergo v1.0.2
 	github.com/AlecAivazis/survey/v2 v2.3.7
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/metric v0.54.0
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/trace v1.27.0

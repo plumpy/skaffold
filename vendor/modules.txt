@@ -80,7 +80,7 @@ cloud.google.com/go/storage/internal/apiv2/storagepb
 cloud.google.com/go/trace/apiv2
 cloud.google.com/go/trace/apiv2/tracepb
 cloud.google.com/go/trace/internal
-# dario.cat/mergo v1.0.1
+# dario.cat/mergo v1.0.2
 ## explicit; go 1.13
 dario.cat/mergo
 # github.com/AlecAivazis/survey/v2 v2.3.7
