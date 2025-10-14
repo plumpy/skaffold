@@ -61,7 +61,7 @@ require (
 	github.com/google/ko v0.17.1
 	github.com/google/uuid v1.6.0
 	github.com/googleapis/gax-go/v2 v2.15.0
-	github.com/grpc-ecosystem/grpc-gateway/v2 v2.26.3
+	github.com/grpc-ecosystem/grpc-gateway/v2 v2.27.3
 	github.com/hashicorp/hcl v1.0.1-vault-7
 	github.com/heroku/color v0.0.6
 	github.com/joho/godotenv v1.5.1
